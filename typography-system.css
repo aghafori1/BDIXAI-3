@@ -1,0 +1,297 @@
+/* BDIX AI — Unified editorial typography system
+   Shared alignment, hierarchy and spacing for all content blocks.
+   Direction follows the active document language (RTL Arabic/Persian, LTR English). */
+
+body.bdix-global {
+  font-size: 16px;
+  line-height: 1.72;
+  font-weight: 400;
+  text-align: start;
+}
+
+/* Shared heading and supporting-copy rhythm */
+body.bdix-global :is(#hero-banner, #services, #work, #process, #about, #brand-universe) {
+  text-align: start;
+}
+
+body.bdix-global :is(#services, #work, #process) .sh {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  justify-items: stretch;
+  align-items: start;
+  gap: .7rem;
+  margin-block-end: clamp(1.5rem, 2.5vw, 2.25rem);
+  text-align: start;
+}
+
+body.bdix-global :is(#services, #work, #process) .sh > div,
+body.bdix-global :is(#services, #work, #process) .sh > p {
+  width: 100%;
+  min-width: 0;
+  margin-inline: 0;
+  text-align: start;
+}
+
+body.bdix-global :is(#services, #work, #process) .sh h2 {
+  max-width: 26ch;
+  margin: 0;
+  font-size: clamp(1.85rem, 3.1vw, 2.55rem) !important;
+  font-weight: 500 !important;
+  line-height: 1.28 !important;
+  letter-spacing: 0 !important;
+  text-wrap: pretty;
+}
+
+body.bdix-global :is(#services, #work, #process) .sh > p {
+  max-width: 62ch;
+  margin-block: .15rem 0;
+  color: var(--m, #8FA3BE);
+  font-size: clamp(.96rem, 1.12vw, 1.06rem);
+  font-weight: 400;
+  line-height: 1.78;
+}
+
+/* Hero: one common inline edge for eyebrow, title, description and actions */
+#hero-banner .hb-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: 100%;
+  text-align: start;
+}
+
+#hero-banner .hb-eyebrow,
+#hero-banner .hb-title,
+#hero-banner .hb-sub {
+  width: 100%;
+  margin-inline: 0;
+  text-align: start;
+}
+
+#hero-banner .hb-title,
+#hero-banner .hb-title-stack {
+  max-width: 18ch;
+  margin-block: 0;
+  font-size: clamp(2.45rem, 4.35vw, 3.35rem) !important;
+  font-weight: 500 !important;
+  line-height: 1.2 !important;
+  letter-spacing: 0 !important;
+  text-wrap: pretty;
+  overflow-wrap: normal;
+}
+
+html[dir="rtl"] #hero-banner .hb-title,
+html[dir="rtl"] #hero-banner .hb-title-stack {
+  line-height: 1.42 !important;
+}
+
+#hero-banner .hb-sub {
+  max-width: 39rem;
+  margin-block: 1rem 0;
+  font-size: clamp(.98rem, 1.12vw, 1.08rem) !important;
+  font-weight: 400 !important;
+  line-height: 1.8 !important;
+  text-align: start;
+  text-wrap: pretty;
+}
+
+#hero-banner .hb-actions {
+  align-self: start;
+  justify-content: flex-start;
+  margin-block-start: 1.35rem;
+}
+
+/* Service, work, process and principle cards */
+body.bdix-global :is(#services, #work, #process, #about) :is(.card, .proof article, .step, .about-principles article) {
+  text-align: start;
+}
+
+body.bdix-global :is(#services, #work, #process, #about) :is(.card, .proof article, .step, .about-principles article) h3 {
+  max-width: 26ch;
+  margin-block: 1.15rem .55rem;
+  margin-inline: 0;
+  font-size: clamp(1.12rem, 1.65vw, 1.38rem) !important;
+  font-weight: 500 !important;
+  line-height: 1.42 !important;
+  letter-spacing: 0 !important;
+  text-align: start;
+  text-wrap: pretty;
+}
+
+body.bdix-global :is(#services, #work, #process, #about) :is(.card, .proof article, .step, .about-principles article) p {
+  max-width: 52ch;
+  margin-block: .5rem 0;
+  margin-inline: 0;
+  font-size: .96rem;
+  font-weight: 400;
+  line-height: 1.76;
+  text-align: start;
+  text-wrap: pretty;
+}
+
+body.bdix-global #services .card ul {
+  margin-block: .85rem 0;
+  margin-inline: 0;
+  padding-inline-start: 1.15rem;
+  text-align: start;
+}
+
+body.bdix-global #services .card li {
+  padding-inline-start: .12rem;
+  font-size: .92rem;
+  line-height: 1.75;
+  text-align: start;
+}
+
+/* About and Process multi-line headings use the same left/right edge as their copy */
+body.bdix-global #about .about-copy,
+body.bdix-global #process .sh > div {
+  width: 100%;
+  min-width: 0;
+  text-align: start;
+}
+
+body.bdix-global #about .about-copy h2,
+body.bdix-global #process .process-title {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: .08em;
+  width: 100%;
+  max-width: 26ch;
+  margin: 0;
+  text-align: start;
+  font-weight: 500 !important;
+}
+
+body.bdix-global #about .about-title-lead,
+body.bdix-global #process .process-title-lead {
+  display: block;
+  width: 100%;
+  font-size: clamp(1.9rem, 3.15vw, 2.55rem) !important;
+  font-weight: 500 !important;
+  line-height: 1.24 !important;
+  text-align: start;
+}
+
+body.bdix-global #about .about-title-rest,
+body.bdix-global #process .process-title-rest {
+  display: block;
+  width: 100%;
+  font-size: clamp(1.55rem, 2.55vw, 2.05rem) !important;
+  font-weight: 400 !important;
+  line-height: 1.38 !important;
+  text-align: start;
+}
+
+body.bdix-global #about .about-lead {
+  max-width: 58ch;
+  margin-block: 1rem 0;
+  margin-inline: 0;
+  font-size: clamp(.98rem, 1.12vw, 1.08rem);
+  font-weight: 400;
+  line-height: 1.82;
+  text-align: start;
+  text-wrap: pretty;
+}
+
+/* Brand Universe intro and selected topic copy */
+body.bdix-global #brand-universe .bu-intro-block,
+body.bdix-global #brand-universe .bu-details,
+body.bdix-global #brand-universe .bu-panel {
+  text-align: start;
+}
+
+body.bdix-global #brand-universe .bu-title {
+  max-width: 22ch;
+  margin: 0;
+  font-size: clamp(1.9rem, 3.15vw, 2.55rem) !important;
+  font-weight: 500 !important;
+  line-height: 1.28 !important;
+  letter-spacing: 0 !important;
+  text-align: start;
+  text-wrap: pretty;
+}
+
+body.bdix-global #brand-universe .bu-intro,
+body.bdix-global #brand-universe .bu-panel-copy {
+  max-width: 58ch;
+  margin-block: .9rem 0;
+  margin-inline: 0;
+  font-size: .98rem;
+  font-weight: 400;
+  line-height: 1.8;
+  text-align: start;
+  text-wrap: pretty;
+}
+
+body.bdix-global #brand-universe .bu-panel h3 {
+  max-width: 26ch;
+  margin: .55rem 0 0;
+  font-size: clamp(1.2rem, 1.8vw, 1.48rem) !important;
+  font-weight: 500 !important;
+  line-height: 1.42 !important;
+  text-align: start;
+}
+
+/* Contact page copy follows the same editorial alignment */
+body.bdix-global .contact-intro,
+body.bdix-global .contact-intro h1,
+body.bdix-global .contact-intro .intro-text {
+  text-align: start;
+}
+
+body.bdix-global .contact-intro h1 {
+  max-width: 22ch;
+  font-weight: 500 !important;
+  line-height: 1.3 !important;
+  text-wrap: pretty;
+}
+
+body.bdix-global .contact-intro .intro-text {
+  max-width: 58ch;
+  margin-inline: 0;
+  line-height: 1.8;
+}
+
+@media (max-width: 850px) {
+  body.bdix-global :is(#services, #work, #process) .sh h2 {
+    font-size: clamp(1.7rem, 5.2vw, 2.2rem) !important;
+  }
+  #hero-banner .hb-title,
+  #hero-banner .hb-title-stack {
+    max-width: 19ch;
+    font-size: clamp(2.1rem, 7vw, 2.8rem) !important;
+  }
+  body.bdix-global #about .about-title-lead,
+  body.bdix-global #process .process-title-lead {
+    font-size: clamp(1.75rem, 5.6vw, 2.25rem) !important;
+  }
+  body.bdix-global #about .about-title-rest,
+  body.bdix-global #process .process-title-rest {
+    font-size: clamp(1.45rem, 4.6vw, 1.85rem) !important;
+  }
+}
+
+@media (max-width: 520px) {
+  body.bdix-global :is(#services, #work, #process) .sh {
+    gap: .55rem;
+    margin-block-end: 1.15rem;
+  }
+  #hero-banner .hb-title,
+  #hero-banner .hb-title-stack {
+    font-size: clamp(1.9rem, 8vw, 2.45rem) !important;
+    line-height: 1.28 !important;
+  }
+  html[dir="rtl"] #hero-banner .hb-title,
+  html[dir="rtl"] #hero-banner .hb-title-stack {
+    line-height: 1.42 !important;
+  }
+  #hero-banner .hb-sub {
+    font-size: .95rem !important;
+    line-height: 1.75 !important;
+  }
+  body.bdix-global :is(#services, #work, #process, #about) :is(.card, .proof article, .step, .about-principles article) h3 {
+    margin-block-start: .8rem;
+  }
+}
